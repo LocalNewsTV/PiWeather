@@ -4,8 +4,8 @@ import requests
 from sense_hat import SenseHat
 sense = SenseHat()
 #Hours between we want the screen to display
-morning = 7
-night = 22
+morning = 8
+night = 21
 #Gets our API Data
 def call():
     key = '7d98db344ac643c69ab184637222007'
@@ -15,7 +15,7 @@ def call():
 #Checks if the current time is appropriate to display data
 def isAcceptable():
     timeNow = time.strftime('%H')
-    if (int(timeNow) < morning and int(timeNow) > night):
+    if (int(timeNow) < morning or int(timeNow) > night):
         return False
     return True
 #Runs once at start of program to ensure things work
